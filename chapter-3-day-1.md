@@ -13,9 +13,9 @@ The keyword to make a new resource is 'create'
 No, it has to be created inside a contract, so the developer can control when they are created.
 
 #### 5. What is the type of the resource below?
-//Is it a trick question? I am not sure I get this question but Resource should not be of any type (or can be any type) as it is a container of data. I believe it's the data it contains that has a data type? //
+<s>Is it a trick question? I am not sure I get this question but Resource should not be of any type (or can be any type) as it is a container of data. I believe it's the data it contains that has a data type? </s>
 
-** I found out the answer **
+**I found out the answer**
 
 The type is @Jacob
 
