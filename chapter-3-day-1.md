@@ -5,6 +5,7 @@ Structs and Resources are both containers of data but they have the following di
 3. Stucts can be created any where any time in the code. Generally it is the same as any other data type we can define it and use it whenever is needed. A Resources is a lot more controlled. We have to use the keyword 'create' to create inside the contract. 
 
 #### 2. Describe a situation where a resource might be better to use than a struct.
+When there is some valuable data that we do not want to lose on the blockchain, Resource will be a lot more useful than a Struct, as it cannot be overwritten easily. Struct, on the otherhand, is like a regular datatype, and could be overwritten in more cases.
 
 #### 3. What is the keyword to make a new resource?
 The keyword to make a new resource is 'create'
