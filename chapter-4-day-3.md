@@ -10,6 +10,6 @@ A destroy() function has to be added to the outermost resource to destroy the re
 * Idea #1: Do we really want everyone to be able to mint an NFT? 🤔.
 * Idea #2: If we want to read information about our NFTs inside our Collection, right now we have to take it out of the Collection to do so. Is this good?
 
-With this contract, everyone can use a transaction to call the withdraw function and withdraw an NFT from the collection, because the resource type it uses expose everything in it. This is not a good idea. If we use resource interface, we can define what variables and functions to be expose, and that way other people cannot access the fucntions that they are not suppose to and mess with the collection.
+With this contract, the only way to get the information of an NFT is to use the withdraw function. This means we need to move the resource out of the storage everytime even when the only thing we need is just to read some of the metadata, and have to deposit it back to the collection. This is not efficient. To fix this we can add a function to return the reference to an NFT inside the collection, expose it to the public, so users can use the NFT id to get the information inside the NFT.
 
-Also in this contract, the only way to get the information of an NFT is to use the withdraw function.
+Also this contract allow everyone to sign the transaction and mint the NFT and deposit it to the user's own account. This is not good as we cannot control who can mint the NFT. To fix this is can put the function that creates the NFT in a new resource, and save this resource in the /storage/ area. This way, only the account owner will have acceses to this function to mint an NFT.
