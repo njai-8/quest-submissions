@@ -1,5 +1,5 @@
 #### Describe what an event is, and why it might be useful to a client.
-Event is like a broadcast from a contract, 
+Event is like a broadcast from a contract, so it can proactivly sends out information for a client who wants to use it. An example is the Float live page, we see a float icon floating on the page when someone mints a float. That information is from an event.
 
 #### Deploy a contract with an event in it, and emit the event somewhere else in the contract indicating that it happened.
 #### Using the contract in step 2), add some pre conditions and post conditions to your contract to get used to writing them out.
