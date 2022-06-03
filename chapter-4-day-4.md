@@ -31,7 +31,8 @@ pub contract CryptoPoops {
     pub fun getIDs(): [UInt64]
     pub fun borrowNFT(id: UInt64): &NFT
   }
-  // This is to 
+  // This is to define a collection of the NFTs. It is like a folder so this
+  // can hold multiple NFTs of the same kind.
   pub resource Collection: CollectionPublic {
     pub var ownedNFTs: @{UInt64: NFT}
 
@@ -53,7 +54,10 @@ pub contract CryptoPoops {
     pub fun getIDs(): [UInt64] {
       return self.ownedNFTs.keys
     }
-
+    // This function returns a reference to the NFT
+    // inside the collection. This way users can read the information
+    // of NFT without having to withdrawing it from the collection.
+    // This also can be used in script
     pub fun borrowNFT(id: UInt64): &NFT {
       return &self.ownedNFTs[id] as &NFT
     }
@@ -70,13 +74,15 @@ pub contract CryptoPoops {
   pub fun createEmptyCollection(): @Collection {
     return <- create Collection()
   }
-
+  // This resource is to wrapped around the createNFT to make sure this function can only 
+  // be called by the account owner. So no one other than the account owner can mint the NFT.
+  // It is being done by creating this resource in the /storage/Minter which only account owner can access
   pub resource Minter {
-
+    // This function is to create an NFT
     pub fun createNFT(name: String, favouriteFood: String, luckyNumber: Int): @NFT {
       return <- create NFT(_name: name, _favouriteFood: favouriteFood, _luckyNumber: luckyNumber)
     }
-
+    // This function is to create a Minter resource
     pub fun createMinter(): @Minter {
       return <- create Minter()
     }
