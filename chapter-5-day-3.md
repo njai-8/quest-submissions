@@ -1,8 +1,10 @@
-1. What does "force casting" with as! do? Why is it useful in our Collection?
+### What does "force casting" with as! do? Why is it useful in our Collection?
+Using the 'force casting' operator `as!` means downcasting a generic type to a more specific type. In Collections interface, the type is usually generic and we cannot access the data from there. by downcasting it to a more specific type we will be able to get to the metadata. 
 
-2. What does auth do? When do we use it?
+### What does auth do? When do we use it?
+auth states that the reference after it is a authorized reference. If we want to downcast a generic type to a more specific type we need to use the authorized reference.
 
-3. This last quest will be your most difficult yet. Take this contract:
+### This last quest will be your most difficult yet. Take this contract:
 
 #### Contract CryptoPoops
 ```cadence
